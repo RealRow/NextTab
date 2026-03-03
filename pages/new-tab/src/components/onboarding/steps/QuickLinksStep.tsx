@@ -1,5 +1,5 @@
 import { useState, useEffect, type FC } from 'react'
-import { Stack, Text, ScrollArea } from '@extension/ui'
+import { Stack, Text, ScrollArea, toast } from '@extension/ui'
 import { quickUrlItemsStorage } from '@extension/storage'
 import { useStorage } from '@extension/shared'
 import { t } from '@extension/i18n'
@@ -99,7 +99,9 @@ export const QuickLinksStep: FC<StepNavigationProps> = ({ onNext, onBack }) => {
         })),
       ])
       onNext()
-    } finally {
+    } catch (error) {
+      console.error('Failed to import quick links into storage', error)
+      toast.error(t('onboardingImportError'))
       setImporting(false)
     }
   }
