@@ -64,8 +64,8 @@ export const useLatestVersion = (repositoryUrl: string) => {
         await chrome.storage.local.set({
           [CACHE_KEY]: {
             version: versionText,
-            timestamp: Date.now()
-          } as CachedVersion
+            timestamp: Date.now(),
+          } as CachedVersion,
         })
       } catch (error) {
         console.error('Failed to cache version:', error)
@@ -82,5 +82,5 @@ export const useLatestVersion = (repositoryUrl: string) => {
     fetchLatestVersion()
   }, [fetchLatestVersion])
 
-  return { latestVersion, isChecking, checkError }
+  return { latestVersion, isChecking, checkError, refetch: fetchLatestVersion }
 }

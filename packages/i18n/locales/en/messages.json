@@ -652,5 +652,25 @@
   "deleteQuickItem": {
     "description": "Delete",
     "message": "Delete"
+  },
+  "grantPermission": {
+    "description": "Grant permission button text",
+    "message": "Grant Access"
+  },
+  "permissionGranted": {
+    "description": "Permission granted indicator text",
+    "message": "Authorized"
+  },
+  "wallhavenPermissionDescription": {
+    "description": "Description for Wallhaven API permission",
+    "message": "Authorization required to browse Wallhaven wallpapers"
+  },
+  "githubPermissionDescription": {
+    "description": "Description for GitHub API permission",
+    "message": "Authorization required to check for updates"
+  },
+  "mqttPermissionDescription": {
+    "description": "Description for MQTT broker permission",
+    "message": "Authorization required to connect to MQTT server"
   }
 }
